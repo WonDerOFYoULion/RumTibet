@@ -1,0 +1,33 @@
+@import '../../Mixins-and-Defolts/mixins';
+
+.container {
+  @include Container;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  .navbar-body {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: 196px;
+    li {
+      @include White18T;
+      transition: 0.5s;
+      &:hover {
+        color: aqua;
+      }
+    }
+  }
+  .navbar-con-but {
+    @include GreenButton;
+    @include White18T;
+    margin-left: 56px;
+    transition: 0.5s;
+    &:hover {
+      color: rgba(179, 238, 236, 1.00);
+    }
+  }
+}

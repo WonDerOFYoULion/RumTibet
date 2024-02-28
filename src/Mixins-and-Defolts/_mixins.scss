@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+$PTSansCaption: "PT Sans Caption", sans-serif;
+$NunitoSans: "Nunito Sans", sans-serif;
+
+@mixin GreenButton {
+  border-radius: 4px;
+  background: rgb(26, 62, 62);
+  padding: 12px 24px 12px 24px;
+}
+
+@mixin HeaderText {
+  color: rgb(253, 253, 253);
+  font-family: $PTSansCaption;
+  font-size: 50px;
+  font-weight: 100;
+  line-height: 150%;
+  letter-spacing: 2%;
+  text-align: left;
+}
+
+@mixin White18T{
+  color: rgb(253, 253, 253);
+  font-family: $NunitoSans;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+@mixin Container {
+  width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
