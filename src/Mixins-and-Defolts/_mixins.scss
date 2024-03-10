@@ -7,6 +7,23 @@ $NunitoSans: "Nunito Sans", sans-serif;
   border-radius: 4px;
   background: rgb(26, 62, 62);
   padding: 12px 24px 12px 24px;
+  color: rgb(253, 253, 253);
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  font-family: $NunitoSans;
+}
+
+@mixin WhiteButton {
+  border-radius: 4px;
+  background: rgb(253, 253, 253);
+  padding: 16px 36px 16px 36px;
+}
+
+@mixin Container {
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 @mixin HeaderText {
@@ -16,6 +33,52 @@ $NunitoSans: "Nunito Sans", sans-serif;
   font-weight: 100;
   line-height: 150%;
   letter-spacing: 2%;
+  text-align: left;
+}
+
+@mixin Black14T {
+  color: rgb(0, 0, 0);
+  font-family: $NunitoSans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@mixin Black18T{
+  color: rgb(24, 18, 30);
+  font-family: $NunitoSans;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+@mixin Black32T {
+  color: rgb(24, 18, 30);
+  font-family: $NunitoSans;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 120%;
+}
+
+@mixin White14T{
+  color: rgb(253, 253, 253);
+  font-family: $NunitoSans;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 18px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+@mixin White16T{
+  color: rgb(253, 253, 253);
+  font-family: $NunitoSans;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0%;
   text-align: left;
 }
 
@@ -29,8 +92,21 @@ $NunitoSans: "Nunito Sans", sans-serif;
   text-align: left;
 }
 
-@mixin Container {
-  width: 1180px;
-  margin-left: auto;
-  margin-right: auto;
+@mixin White24T{
+  color: rgb(253, 253, 253);
+  font-family: $NunitoSans;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0%;
+  text-align: left;
 }
+
+@mixin Yellow24T {
+  color: rgb(242, 190, 34);
+  font-family: $NunitoSans;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 20px;
+}
+

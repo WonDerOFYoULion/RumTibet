@@ -1,0 +1,54 @@
+@import '../../Mixins-and-Defolts/mixins';
+.programs-holder {
+  @include Container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .programs-holder-left {
+    width: 564px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    .programs-holder-h2 {
+      @include Yellow24T;
+      margin-bottom: -32px;
+    }
+    .programs-holder-h1 {
+      @include Black32T;
+    }
+    .programs-holder-p {
+      @include Black18T;
+    }
+    .merit {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      h2 {
+        @include Black18T;
+      }
+      p {
+        @include Black14T;
+      }
+    }
+    .programs-holder-button {
+      @include GreenButton
+    }
+  }
+  .programs-holder-right {
+    display: block;
+  }
+}
+
+@media (max-width: 1080px) {
+  .programs-holder {
+    justify-content: center;
+    .programs-holder-left {
+      align-items: center;
+      width: 100%;
+    }
+    .programs-holder-right {
+      display: none;
+    }
+  }
+}

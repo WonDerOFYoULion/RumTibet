@@ -1,0 +1,134 @@
+@import '../../Mixins-and-Defolts/mixins';
+
+.directions-holder {
+  @include Container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  .directions-holder-h2 {
+    @include Yellow24T;
+    margin-bottom: -42px;
+  }
+  .directions-holder-h1 {
+    @include Black32T; 
+  }
+  .swiper {
+    width: 100%;
+    .swiper-slide {
+      width: 380px;
+      height: 500px;
+      border-radius: 32px;
+      overflow-x: hidden;
+      position: relative;
+
+      .name-and-price-holder {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        .name-and-price {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 25px 32px;
+          backdrop-filter: blur(3px);
+          background: rgba(255, 255, 255, 0.2);
+  
+          .name {
+            .name-h3 {
+              @include White24T;
+            }
+            .name-p {
+              @include White14T;
+            }
+          }
+          .price {
+            @include White24T;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.3);
+          }
+
+          @media (max-width: 830px) {
+            .name {
+              .name-h3 {
+                @include White18T;
+              }
+              .name-p {
+                display: none;
+              }
+            }
+            .price {
+              @include White16T;
+              padding: 6px 12px;
+            }
+          }
+
+        }
+      }
+      .mark {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        @include Black14T;
+        padding: 4px 8px;
+        backdrop-filter: blur(4px);
+        background: rgba(253, 253, 253, 0.4);
+        border-radius: 4px 0px 0px 4px;
+        top: 0px;
+        left: 0px;
+        margin-top: 10%;
+        margin-left: 83.5%;
+
+      }
+    }
+
+    .lake {
+      background-image: url(/Img/Lake.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .night {
+      background-image: url(/Img/Night.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .yoga {
+      background-image: url(/Img/Yoga.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  .directions-holder-button {
+    @include GreenButton
+  }
+}
+
+
+// @media (max-width: 1179px) {
+//   .directions-holder {
+//     .swiper {
+//       width: 800px;
+//     } 
+//   }
+// }    
+
+@media (max-width: 830px) {
+  .directions-holder {
+    .swiper {
+      width: 100%;
+      .swiper-slide {
+        width: 280px;
+        height: 400px;
+        .mark {
+          margin-left: 77.5%;
+        }
+      }
+    }
+  }
+}
+

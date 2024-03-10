@@ -1,7 +1,84 @@
+@import '../../../Mixins-and-Defolts/mixins';
 .form {
   background-color: rgba(255, 255, 255, 0.20);
   border-radius: 10px;
   backdrop-filter: blur(6px);
   width: 100%;
   height: 161px;
+
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 40px 0px 0px 43px;
+  .form-block {
+    @include White18T;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .input {
+      width: 270px;
+      padding: 14px 16px;
+      align-items: center;
+      border: 1px solid rgb(225, 227, 228);
+      border-radius: 8px;
+      .location {
+        width: 100%;
+        padding-right: 8px;
+        &:focus {
+          outline: none;
+        }
+        option {
+          color: black;
+        }
+      }
+      .date {
+        width: 100%;
+        &[type="date"]::-webkit-calendar-picker-indicator {
+          filter: invert(1); 
+        }
+      }
+      .participants {
+        width: 210px;
+        padding-right: 8px;
+      }
+    }
+  }
+  .form-button {
+    @include WhiteButton;
+    @include White18T;
+    color: black;
+  }
+}
+
+.test {
+  width: 400px;
+  height: 100px;
+  background-color: rgba(155, 224, 176, 0.397);
+  position: relative;
+  .test-input {
+    padding: 14px 16px;
+    border: 1px solid rgb(225, 227, 228);
+    border-radius: 8px;
+    width: 166px;
+    input {
+      width: 100px;
+      margin-right: 8px;
+    }
+  }
+  .list {
+    position: absolute;
+    top: -127px;
+    left: 187px;
+    width: 150px;
+    height: 80px;
+    z-index: 1;
+    background-color: azure;
+    @include White18T;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+  }
 }

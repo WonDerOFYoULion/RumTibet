@@ -60,6 +60,11 @@ input:focus, input:active,
 button:focus, button:active {
 	outline: none;
 }
+
+input::placeholder {
+  color: inherit; 
+}
+
 button {
 	&::-moz-focus-inner {
 		padding: 0;
