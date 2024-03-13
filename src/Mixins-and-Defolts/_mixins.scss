@@ -50,8 +50,15 @@ $NunitoSans: "Nunito Sans", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 25px;
-  letter-spacing: 0%;
   text-align: left;
+}
+
+@mixin Black24T {
+  color: rgb(24, 18, 30);
+  font-family: $NunitoSans;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
 }
 
 @mixin Black32T {
@@ -68,7 +75,6 @@ $NunitoSans: "Nunito Sans", sans-serif;
   font-size: 14px;
   font-weight: 200;
   line-height: 18px;
-  letter-spacing: 0%;
   text-align: left;
 }
 
@@ -78,7 +84,6 @@ $NunitoSans: "Nunito Sans", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 18px;
-  letter-spacing: 0%;
   text-align: left;
 }
 
@@ -88,7 +93,6 @@ $NunitoSans: "Nunito Sans", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 25px;
-  letter-spacing: 0%;
   text-align: left;
 }
 
@@ -98,8 +102,15 @@ $NunitoSans: "Nunito Sans", sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 25px;
-  letter-spacing: 0%;
   text-align: left;
+}
+
+@mixin Yellow14T {
+  color: rgb(242, 190, 34);
+  font-family: $NunitoSans;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
 }
 
 @mixin Yellow24T {

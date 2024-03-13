@@ -4,6 +4,8 @@ import Header from './Components/Header/header';
 import Researches from './Components/Researches/researches';
 import Programs from './Components/Programs/programs';
 import Directions from './Components/Popular directions/directions';
+import Blog from './Components/Blog/blog';
+import Impressions from './Components/Impressions/impressions';
 
 import 'normalize.css';
 import './App.scss';
@@ -25,6 +27,12 @@ function App() {
         </div>
         <div className="directions for-indent">
           <Directions></Directions>
+        </div>
+        <div className='blog for-indent'>
+          <Blog></Blog>
+        </div>
+        <div className='ipressions for-indent'>
+          <Impressions></Impressions>
         </div>
       </div>
     </Router>

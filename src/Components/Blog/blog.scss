@@ -1,0 +1,101 @@
+@import '../../Mixins-and-Defolts/mixins';
+
+.blog-holder {
+  @include Container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  .blog-holder-h2 {
+    @include Yellow24T;
+    margin-bottom: -42px;
+  }
+  .blog-holder-h1 {
+    @include Black32T; 
+  }
+  .blog-swiper{
+    width: 100%;
+    .blog-slide {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border-radius: 10px;
+      background: rgb(253, 253, 253);
+
+      width: 580px;
+      height: 312px;
+      padding: 16px;
+
+      .blog-slide-inf {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        width: 293px;
+        height: 261px;
+        .blog-slide-inf-h1 {
+          @include Black24T;
+        }
+        .cont-container {
+          height: 120px;
+          overflow: hidden;
+          .blog-slide-inf-p {
+            padding-top: 24px;
+            @include Black14T
+          }
+        }
+        .date-and-link {
+          display: flex;
+          justify-content: space-between;
+          position: absolute;
+      
+          top: 0px;
+          left: 0px;
+          margin-top: 82.2%;
+          width: 100%;
+          .date {
+            @include Yellow14T;
+          }
+          .blog-link {
+            @include Black14T;
+            color: rgb(26, 62, 62);
+          }
+        }
+      }
+
+
+    }
+
+    @media (max-width: 1180px) {
+      .blog-slide {
+        flex-direction: column;
+        justify-content: start;
+        width: 285px;
+        height: 580px;
+        padding: 0px;
+        .blog-img-holder {
+          width: 285px;
+          height: 280px;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        .blog-slide-inf {
+          padding:16px;
+          .date-and-link {
+            left: 16px;
+            margin-top: 270px;
+            width: 260px;
+          }
+        }
+      }
+    }
+
+  }
+  .blog-holder-button {
+    @include GreenButton;
+  }
+}

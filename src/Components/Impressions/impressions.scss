@@ -1,0 +1,89 @@
+@import '../../Mixins-and-Defolts/mixins';
+
+.impressions-holder {
+  @include Container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  .impressions-holder-h2 {
+    @include Yellow24T;
+    margin-bottom: -42px;
+  }
+  .impressions-holder-h1 {
+    @include Black32T; 
+  }
+
+  //Grid до 910px
+
+  .impressions-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 80px);
+    grid-auto-rows: 250px;
+    gap: 20px;
+
+    .photo-grid-el {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      .close-up {
+        opacity: 0;
+        transition: 0.3s;
+      }
+      &:hover {
+        .close-up {
+          opacity: 1;
+        }
+      }
+    }
+    .grid-type-one {
+      grid-column: span 6;
+    }
+    .grid-type-two {
+      grid-column: span 3;
+    }
+  }
+
+  //Swiper ниже 910px
+  .impressions-swiper {
+    width: 100%;
+    .impressions-swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      width: 280px;
+      height: 250px;
+      .close-up {
+        opacity: 0;
+        transition: 0.3s;
+      }
+      &:hover {
+        .close-up {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1180px) {
+    .impressions-grid {
+      grid-template-columns: repeat(9, 80px);
+      .grid-type-one {
+        grid-column: span 3;
+      }
+    }
+  }
+
+  .impressions-holder-button {
+    @include GreenButton
+  }
+}

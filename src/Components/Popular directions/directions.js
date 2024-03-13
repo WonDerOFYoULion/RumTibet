@@ -22,11 +22,13 @@ const Directions = () => {
             slidesPerView: 'auto',
             spaceBetween: 20,
             centeredSlides: true,
-            initialSlide: 1
+            initialSlide: 1,
+            loop: false
           },
           1180: {
             slidesPerView: 3,
-            centeredSlides: false
+            centeredSlides: false,
+            loop: false
           }
         }}
       >
