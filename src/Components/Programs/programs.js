@@ -45,7 +45,7 @@ const Programs = () => {
 
       </div>
       <div className='programs-holder-right'>
-        <img src={programs} alt="programs" />
+        <img  src={programs} alt="programs" />
       </div>
     </div>
   );

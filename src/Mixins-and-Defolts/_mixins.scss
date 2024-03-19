@@ -44,6 +44,15 @@ $NunitoSans: "Nunito Sans", sans-serif;
   line-height: 20px;
 }
 
+@mixin Black16T{
+  color: rgb(24, 18, 30);
+  font-family: $NunitoSans;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+}
+
 @mixin Black18T{
   color: rgb(24, 18, 30);
   font-family: $NunitoSans;
@@ -64,7 +73,7 @@ $NunitoSans: "Nunito Sans", sans-serif;
 @mixin Black32T {
   color: rgb(24, 18, 30);
   font-family: $NunitoSans;
-  font-size: 32px;
+  font-size: 29px;
   font-weight: 800;
   line-height: 120%;
 }
@@ -93,6 +102,15 @@ $NunitoSans: "Nunito Sans", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 25px;
+  text-align: left;
+}
+
+@mixin White20T{
+  color: rgb(253, 253, 253);
+  font-family: $NunitoSans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
   text-align: left;
 }
 

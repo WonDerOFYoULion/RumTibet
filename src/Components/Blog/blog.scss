@@ -27,6 +27,10 @@
       height: 312px;
       padding: 16px;
 
+      .blog-img-holder{
+        pointer-events: none;
+      }
+
       .blog-slide-inf {
         display: flex;
         flex-direction: column;

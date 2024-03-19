@@ -68,7 +68,7 @@ const Blog = () => {
         {blogs.map((blog) => (          
           <SwiperSlide className="blog-slide" key={blog.id}>
             <div className="blog-img-holder">
-              <img src={blog.img} alt={blog.titel} />
+              <img className="blog-img" src={blog.img} alt={blog.titel} />
             </div>
             <div className="blog-slide-inf">
               <h1 className="blog-slide-inf-h1">{blog.titel}</h1>

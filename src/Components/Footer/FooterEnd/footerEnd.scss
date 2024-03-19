@@ -1,0 +1,18 @@
+@import '../../../Mixins-and-Defolts/mixins';
+
+.footer-end-holder {
+  @include Container;
+  @include White14T;
+  display: flex;
+  justify-content: space-between;
+  .politics {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 570px) {
+  .footer-end-holder {
+    flex-direction: column;
+    align-items: center;
+  }
+}

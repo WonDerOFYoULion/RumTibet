@@ -1,0 +1,149 @@
+@import '../../Mixins-and-Defolts/mixins';
+
+.footer-holder {
+  @include Container;
+  display: flex;
+  justify-content: space-between;
+
+  .footer-holder-company {
+    max-width: 432px;
+    .company-h2 {
+      @include White20T;
+      margin-bottom: 17px
+    }
+    .company-p {
+      @include White14T;
+    }
+    .company-inform {
+      display: flex;
+      gap: 24px;
+
+      @include White14T;
+      font-weight: 600;
+      text-decoration: underline;
+      margin-top: 80px;
+      margin-bottom: 30px;
+    }
+    .company-icons {
+      display: flex;
+      gap: 16px;
+      .social-networks {
+        transition:0.5s;
+        &:hover {
+          fill: rgba(112, 148, 73, 1.00);
+          transform: scale(1.4);
+        } 
+      }
+    }
+  }
+  
+  .footer-holder-service {
+    width: 332px;
+
+
+
+    .service-h2 {
+      @include White20T;
+      margin-bottom: 17px
+    }
+    .service-list {
+      @include White14T;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      .specific-service-holder {
+        .specific-service {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          transition: 0.3s;
+  
+          &:hover {
+            color: rgb(242, 190, 34);
+            text-decoration: underline;
+            .arrow {
+              fill: rgb(242, 190, 34);
+            }
+          }
+          .specific-service-new {
+            padding: 2px 10px 2px 10px;
+            margin-left: 10px;
+            border-radius: 4px;
+            background: rgb(255, 255, 255);
+  
+            color: rgb(26, 62, 62);
+            font-family: $NunitoSans;
+            font-size: 12px;
+            font-weight: 800;
+            line-height: 16px;
+            letter-spacing: 0%;
+            text-align: left;
+            text-transform: lowercase;
+          }
+        }
+      }
+    }
+
+  }
+
+  @media (max-width: 1065px) {
+    .footer-holder-service {
+      width: 280px;
+
+    }
+  }
+
+  .footer-holder-important {
+    max-width: 279px;
+    .important-h2 {
+      @include White20T;
+      margin-bottom: 17px
+    }
+    .important-list {
+      @include White14T;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+
+      .specific-important-holder {
+        .specific-important {
+          display: flex;
+          align-items: flex-start;
+          gap: 8px;
+          transition: 0.3s;
+
+          .specific-important-p {
+            max-width: 247px;
+          }
+          &:hover {
+            color: rgb(242, 190, 34);
+            text-decoration: underline;
+            .arrow {
+              fill: rgb(242, 190, 34);
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .footer-holder {
+    flex-direction: column;
+    gap: 50px;
+    .footer-holder-company {
+      .company-inform {
+        margin-top: 30px;
+      }
+    }
+    .footer-holder-service {
+      max-width: 332px;
+    }
+    .footer-holder-important {
+    }
+  }
+}

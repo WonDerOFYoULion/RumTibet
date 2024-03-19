@@ -1,10 +1,8 @@
 @import '../../../Mixins-and-Defolts/mixins';
 
-.container {
+.navbar-holder {
   @include Container;
-}
-
-.navbar {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;

@@ -50,35 +50,3 @@
   }
 }
 
-.test {
-  width: 400px;
-  height: 100px;
-  background-color: rgba(155, 224, 176, 0.397);
-  position: relative;
-  .test-input {
-    padding: 14px 16px;
-    border: 1px solid rgb(225, 227, 228);
-    border-radius: 8px;
-    width: 166px;
-    input {
-      width: 100px;
-      margin-right: 8px;
-    }
-  }
-  .list {
-    position: absolute;
-    top: -127px;
-    left: 187px;
-    width: 150px;
-    height: 80px;
-    z-index: 1;
-    background-color: azure;
-    @include White18T;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0;
-    transition: 0.5s;
-  }
-}

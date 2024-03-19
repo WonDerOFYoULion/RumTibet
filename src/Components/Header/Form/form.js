@@ -6,12 +6,6 @@ import { useState } from 'react';
 
 const Form = () => {
 
-  const [active, setActive] = useState(false);
-  const [gorod, setGorod] = useState('');
-  const [help, setHelp] = useState(false);
-  let [meh, setMeh] = useState([]);
-
-
   const citis = [
     {name: 'qg8iot7ltul', id: 1},
     {name: 'wlukljl0y9;y', id: 2},
@@ -19,20 +13,10 @@ const Form = () => {
     {name: 'rchgnbnngujmg', id: 4}
   ]
 
-  const changeGorod = (event) => {
-    setGorod(event.target.value);
-    setMeh(citis.filter(city => city.name.toLowerCase().startsWith(gorod.toLowerCase())));
-    setHelp(true)
-  }
-
-  const setcity = (name) => {
-    setGorod(name);
-    setActive(false);
-  }
-
   return ( 
     <>
       <form className="form">
+
         <div className='form-block'>
 
           <div className='input'>
@@ -55,36 +39,19 @@ const Form = () => {
 
         <div className='form-block'> 
           <div className='input'>
-            <input className='participants' type="text" placeholder='Участники'/>
-            <img src={arrow} alt="arrow" />
+            <select className='participants' placeholder='Участники'>
+              <option value="1">4</option>
+              <option value="2">5-7</option>
+              <option value="3">7-9</option>
+              <option value="4">10</option>
+            </select>
+            {/* <img src={arrow} alt="arrow" /> */}
           </div>
           <label htmlFor="">минимум 4 человека</label>
         </div>
+
         <button className='form-button'>Найти программу</button>
       </form>
-
-      {/* <div className="test">
-
-        <div onClick={() => setActive(!active)} className="test-input">
-          <input 
-            type="text"
-            value={gorod}
-            onChange={changeGorod}
-           />
-          <img src={arrow} alt="arrow" />
-        </div>
-
-        <div className="list" style={{ opacity: active ? '1' : '0'}}>
-          <ul>
-            {help ? meh.map(city => ( // отображаем meh, если help равно true
-              <li key={city.id} onClick={() => setcity(city.name)}>{city.name}</li>
-            )) : citis.map(city => ( // отображаем обычный список городов, если help равно false
-              <li key={city.id} onClick={() => setcity(city.name)}>{city.name}</li>
-            ))}
-          </ul>
-        </div>
-
-      </div> */}
     </>
    );
 }

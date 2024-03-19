@@ -1,0 +1,83 @@
+@import '../../Mixins-and-Defolts/mixins';
+
+
+.mailing-holder {
+  @include Container;
+  display: flex;
+  align-items: center;
+
+  border-radius: 6px;
+  box-shadow: 0px 0px 15px 0px rgba(24, 18, 30, 0.12);
+  background: rgb(253, 253, 253);
+  padding: 40px 0px;
+
+  .mailing-content {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    .malling-holder-left {
+      max-width: 380px;
+      .malling-holder-h2 {
+        @include Yellow24T;
+        padding-bottom: 8px;
+      }
+      .malling-holder-h1 {
+        @include Black32T; 
+      }
+    }
+    
+    .malling-holder-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      max-width: 536px;
+      .malling-r-label {
+        @include Black16T;
+      }
+      .input-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .malling-r-input {
+          @include Black14T;
+          padding: 12px 16px 12px 16px;
+          width: 280px;
+          border-radius: 4px;
+          background: rgb(243, 245, 244);
+        }
+        .malling-r-button {
+          @include GreenButton
+        }
+      }
+      .malling-r-p {
+        @include Black14T;
+      }
+    }
+  }
+}
+
+@media (max-width: 975px) {
+  .mailing-holder {
+    padding: 0px;
+    .mailing-content {
+      flex-direction: column;
+      padding: 24px;
+      gap: 24px;
+      .malling-holder-right {
+        .input-container {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 16px;
+          .malling-r-input {
+            width: 100%;
+          }
+        }
+        .malling-r-p {
+          padding-top: 16px;
+        }
+      }
+    }
+  }
+}
+

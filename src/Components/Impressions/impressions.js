@@ -80,9 +80,10 @@ const Impressions = () => {
         </div>
       )}
 
-      <Link className='impressions-holder-button'>Наш pinterest</Link>
+      <Link to={'https://ru.pinterest.com/'} target='_blank' className='impressions-holder-button'>Наш pinterest</Link>
     </div>
   );
 }
  
 export default Impressions;
+
