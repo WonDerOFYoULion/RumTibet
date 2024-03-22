@@ -5,27 +5,124 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  .navbar-body {
+  justify-content: space-between;
+
+  .navbar-and-link {
     display: flex;
     align-items: center;
-    gap: 24px;
-    margin-left: 196px;
-    li {
+    .navigation {
+      .navbar-body {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        li {
+          @include White18T;
+          transition: 0.5s;
+          &:hover {
+            color: aqua;
+          }
+        }
+      }
+    }
+
+    .navbar-con-button {
+      @include GreenButton;
       @include White18T;
+      margin-left: 56px;
       transition: 0.5s;
       &:hover {
-        color: aqua;
+        color: rgba(179, 238, 236, 1.00);
       }
     }
   }
-  .navbar-con-but {
-    @include GreenButton;
-    @include White18T;
-    margin-left: 56px;
-    transition: 0.5s;
-    &:hover {
-      color: rgba(179, 238, 236, 1.00);
+
+  .navigation-for-phones {
+    position: relative;
+    cursor: pointer;
+    .menu-svg-holder {
+      display: block;
+      .menu-svg {
+        transition: 0.5s;
+        &:hover {
+          fill: blueviolet;
+        }
+      }
+    }
+    .drop-down-menu {
+      position: absolute;
+      z-index: 200;
+      width: 290px;
+      height: 535px;
+      background: rgb(26, 62, 62);
+
+      top: -26px;
+      left: -252px;
+      padding: 16px 16px 0px 16px;
+
+      display: flex;
+      flex-direction: column;
+
+      transition: 2s;
+
+
+      cursor: default;
+
+      .exit-menu {
+        align-self: flex-end;
+        transition: 0.2s;
+        cursor: pointer;
+        &:hover {
+          transform: rotateZ(90deg)
+        }
+      }
+
+      .menu-list {
+        @include White14T;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        .specific-menu-elemnt-holder {
+          .specific-menu-elemnt {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+    
+            &:hover {
+              color: rgb(242, 190, 34);
+              text-decoration: underline;
+              .arrow {
+                fill: rgb(242, 190, 34);
+              }
+            }
+          }
+        }
+      }
+
+    }
+    .visible {
+      // display: flex;
+      transition: 0.3s;
+      opacity: 1;
+      visibility: visible;
+      height: 535px;
+      // transform: translateX(0px);
+    }
+
+    .hidden {
+      // display: none;
+      transition: 0.3s;
+      opacity: 0;
+      visibility: hidden;
+      height: 0px;
+      // transform: translateX(310px);
     }
   }
 }
+
+@media (max-width: 1037px) {
+
+}
+
+// СЛУЩАТЕЛИ ОЧЕНЬ МЕДЛЕННО РАБОТАЮТ, ОСОБЕННО НА ТЕЛЕФОНЕ. МЕНЮ ЗАКРЫВАЕТСЯ 10 МИНУТ А САЙТ ПОДРУЖАЕТСЯ МЕЛИАРД. МЕДИАЗАПРОСЫ РАБОТАЮТ МОМЕНТАЛЬНО. НУЖНО КАК-ТО СДЕЛАТЬ ТОЖЕ САМОЕ С МЛУШЕТЕЛЯМИ + ПЕРЕДЕЛАТЬ USEEFFECT ТК ОН ДОЛЖЕН ПРИНИМАТЬ В СЕБЯ ПАРАМЕТР USESTATE ИНАЧЕ СРЕТ ОШИБКУ И НЕ РАБОТАЕТ 

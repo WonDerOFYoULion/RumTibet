@@ -13,7 +13,7 @@ import FooterEnd from '../../Components/Footer/FooterEnd/footerEnd';
 const Home = () => {
   return ( 
     <div className="home">
-      <div className="head">
+      <div className="head for-indent">
         <Header></Header>
       </div>
       <div className='research for-indent'>

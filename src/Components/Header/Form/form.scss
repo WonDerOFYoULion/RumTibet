@@ -1,52 +1,83 @@
 @import '../../../Mixins-and-Defolts/mixins';
-.form {
-  background-color: rgba(255, 255, 255, 0.20);
-  border-radius: 10px;
-  backdrop-filter: blur(6px);
-  width: 100%;
-  height: 161px;
 
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  padding: 40px 0px 0px 43px;
-  .form-block {
-    @include White18T;
+
+.form-holder {
+  .header-h1 {
+    @include HeaderText;
+  }
+  .form {
+    background-color: rgba(255, 255, 255, 0.20);
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    width: 100%;
+    height: 161px;
+  
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    .input {
-      width: 270px;
-      padding: 14px 16px;
-      align-items: center;
-      border: 1px solid rgb(225, 227, 228);
-      border-radius: 8px;
-      .location {
-        width: 100%;
-        padding-right: 8px;
-        &:focus {
-          outline: none;
-        }
-        option {
-          color: black;
-        }
-      }
-      .date {
-        width: 100%;
-        &[type="date"]::-webkit-calendar-picker-indicator {
-          filter: invert(1); 
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 40px 42px 0px 42px;
+    margin-top: 40px;
+  
+    .form-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .input {
+        width: 270px;
+        padding: 15px 16px;
+        align-items: center;
+        border: 1px solid rgb(225, 227, 228);
+        border-radius: 8px;
+  
+        display: flex;
+        justify-content: space-between;
+        .place-holder {
+          @include White16T;
         }
       }
-      .participants {
-        width: 210px;
-        padding-right: 8px;
+      .label {
+        @include White14T;
       }
     }
+    .form-button {
+      @include WhiteButton;
+    }
   }
-  .form-button {
+  .form-link {
     @include WhiteButton;
-    @include White18T;
-    color: black;
+    align-self: center;
   }
 }
 
+@media screen and (min-width: 781px) and (max-width: 1150px) {
+  .form-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    .header-h1 {
+      @include HeaderText;
+      font-size: 35px;
+      text-align: center
+    }
+    .form-link {
+      @include WhiteButton;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .form-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    .header-h1 {
+      @include HeaderText;
+      font-size: 28px;
+    }
+    .form-link {
+      @include WhiteButton;
+      align-self: flex-start;
+    }
+  }
+}

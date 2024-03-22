@@ -1,12 +1,5 @@
 @import '../../Mixins-and-Defolts/mixins';
 
-.container {
+.head-holder {
   @include Container;
-  .header-h1 {
-    @include HeaderText;
-    padding-top: 463px;
-  }
-  Form {
-    margin-top: 40px;
-  }
 }

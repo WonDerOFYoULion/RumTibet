@@ -1,8 +1,7 @@
 import './form.scss'
 import arrow from '../../../Img/icons/Arrow-down.png'
-import { useState } from 'react';
-
-
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Form = () => {
 
@@ -13,46 +12,64 @@ const Form = () => {
     {name: 'rchgnbnngujmg', id: 4}
   ]
 
+  const [resize, setResize] = useState(false);
+
+  useEffect(() => {
+
+    const handelResize = () => {
+      if (window.innerWidth <= 1150 ) {
+        setResize(true);
+      } else {
+        setResize(false)
+      }
+    }
+
+    handelResize();
+
+    window.addEventListener('resize', handelResize);
+    return () => window.removeEventListener('resize', handelResize)
+  },[]);
+
   return ( 
-    <>
-      <form className="form">
+    <div className='form-holder'>
+      <h1 className="header-h1">Насладись прогулкой в горах с командой единомышленников</h1>
+      {resize ? 
+      (
+        <Link className='form-link'>Найти программу</Link>
+      ):(
+        <form className="form">
 
-        <div className='form-block'>
+            <div className='location form-block'>
 
-          <div className='input'>
-            <select className='location' name="" id="">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </div>
-          <label htmlFor="">выберите из списка</label>
+            <div className='input'>
+              <p className='place-holder'>Локация для тура</p>
+              <img src={arrow} alt="arrow" />
+            </div>
+            <p className='label'>выберите из списка</p>
 
-        </div>
-        
-        <div className='form-block'>
-          <div className='input'>
-            <input className='date' type="date" placeholder='Дата похода'/>
-          </div> 
-          <label htmlFor="">укажите диапазон</label>
-        </div>
+            </div>
 
-        <div className='form-block'> 
-          <div className='input'>
-            <select className='participants' placeholder='Участники'>
-              <option value="1">4</option>
-              <option value="2">5-7</option>
-              <option value="3">7-9</option>
-              <option value="4">10</option>
-            </select>
-            {/* <img src={arrow} alt="arrow" /> */}
-          </div>
-          <label htmlFor="">минимум 4 человека</label>
-        </div>
+            <div className='date form-block'>
+            <div className='input'>
+              <p className='place-holder'>Дата похода</p>
+              <img src={arrow} alt="arrow" />
+            </div> 
+            <p className='label'>укажите диапазон</p>
+            </div>
 
-        <button className='form-button'>Найти программу</button>
-      </form>
-    </>
+            <div className='participants form-block'> 
+            <div className='input'>
+              <p className='place-holder'>Участники</p>
+              <img src={arrow} alt="arrow" />
+            </div>
+            <p className='label'>минимум 4 человека</p>
+            </div>
+
+            <button type='submit' className='form-button'>Найти программу</button>
+
+        </form>
+      )}
+    </div>
    );
 }
  

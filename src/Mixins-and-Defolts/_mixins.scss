@@ -18,7 +18,13 @@ $NunitoSans: "Nunito Sans", sans-serif;
 @mixin WhiteButton {
   border-radius: 4px;
   background: rgb(253, 253, 253);
-  padding: 16px 36px 16px 36px;
+  color: rgb(26, 62, 62);
+  padding: 15px 36px 15px 36px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  font-family: $NunitoSans;
 }
 
 @mixin Container {

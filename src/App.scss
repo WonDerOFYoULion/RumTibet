@@ -8,4 +8,9 @@
     position: absolute;
     z-index: 100;
   }
+  @media (max-width: 1180px) {
+    .navbar {
+      padding: 0px 16px;
+    }
+  }
 }
