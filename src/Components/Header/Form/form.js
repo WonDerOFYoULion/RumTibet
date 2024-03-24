@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 
 const Form = () => {
 
-  const citis = [
-    {name: 'qg8iot7ltul', id: 1},
-    {name: 'wlukljl0y9;y', id: 2},
-    {name: 'e0-jk,g,hjmvh', id: 3},
-    {name: 'rchgnbnngujmg', id: 4}
-  ]
+  // const citis = [
+  //   {name: 'qg8iot7ltul', id: 1},
+  //   {name: 'wlukljl0y9;y', id: 2},
+  //   {name: 'e0-jk,g,hjmvh', id: 3},
+  //   {name: 'rchgnbnngujmg', id: 4}
+  // ]
 
   const [resize, setResize] = useState(false);
 
@@ -37,7 +37,7 @@ const Form = () => {
       (
         <Link className='form-link'>Найти программу</Link>
       ):(
-        <form className="form">
+        <form onSubmit={(event) => event.preventDefault()} className="form">
 
             <div className='location form-block'>
 

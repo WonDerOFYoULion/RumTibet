@@ -103,3 +103,17 @@
     @include GreenButton;
   }
 }
+
+@media (max-width: 500px) {
+  .blog-holder {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    .blog-holder-h2 {
+      margin-bottom: -24px;
+    }
+    .blog-holder-button {
+      align-self: center;
+    }
+  }
+}

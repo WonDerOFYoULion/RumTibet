@@ -14,11 +14,10 @@ const Directions = () => {
       <Swiper className="swiper"
         slidesPerView={'auto'}
         spaceBetween={20}
-        centeredSlides={true}
-        initialSlide={1}
         loop={true}
+        centeredSlides={false}
         breakpoints={{
-          830: {
+          500: {
             slidesPerView: 'auto',
             spaceBetween: 20,
             centeredSlides: true,
@@ -89,7 +88,7 @@ const Directions = () => {
         </SwiperSlide>
 
       </Swiper>
-      <Link className="directions-holder-button">Рейтинг направлений</Link>
+      <Link to={'/dum'} className="directions-holder-button">Рейтинг направлений</Link>
     </div>
    );
 }

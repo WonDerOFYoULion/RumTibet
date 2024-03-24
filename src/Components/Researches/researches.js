@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import './researches.scss'
-import play from '../../Img/icons/Play.png';
+import play from '../../Img/icons/Play.svg'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css'
@@ -21,9 +21,9 @@ const Researches = () => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-
     handleResize();
+
+    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -37,7 +37,7 @@ const Researches = () => {
 
         {screeReduced ? (
           <div className='swiper'> 
-            <div className='research-holder-slide1 slide-hover'>
+            <div className='research-holder-slide2 slide-hover'>
               <Link>
                 <img className='play-icon' src={play} alt="play" />
               </Link>
@@ -63,19 +63,19 @@ const Researches = () => {
             }
           }}
         >
-          <SwiperSlide className='research-holder-slide1 slide-hover'>
-            <Link>
-              <img className='play-icon' src={play} alt="play" />
-            </Link>
-          </SwiperSlide>
+            <SwiperSlide className='research-holder-slide1 slide-hover'>
+              <Link target='_blank' to={'https://youtu.be/FiU29CHsQpo?si=kH7wbZfmjmzQH_nj'}>
+                <img className='play-icon' src={play} alt="play" />
+              </Link>
+            </SwiperSlide>
 
-          <SwiperSlide className='research-holder-slide2 slide-hover'>
-            <Link>
-              <img className='play-icon' src={play} alt="play" />
-            </Link>
-          </SwiperSlide>
+            <SwiperSlide className='research-holder-slide2 slide-hover'>
+              <Link target='_blank' to={'https://youtu.be/FiU29CHsQpo?si=kH7wbZfmjmzQH_nj'}>
+                <img className='play-icon' src={play} alt="play" />
+              </Link>
+            </SwiperSlide>
           
-        </Swiper>
+          </Swiper>
         )}
       </div>
 
@@ -85,7 +85,7 @@ const Researches = () => {
         <p className='research-holder-p'>
           Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"и занялся его поисками в классической латинской литературе.
         </p>
-        <Link className='research-holder-button'>Программа тура</Link>
+        <Link to={'/dum'} className='research-holder-button'>Программа тура</Link>
       </div>
 
     </div>

@@ -47,7 +47,8 @@
           background: rgb(243, 245, 244);
         }
         .malling-r-button {
-          @include GreenButton
+          @include GreenButton;
+          font-size: 15px;
         }
       }
       .malling-r-p {

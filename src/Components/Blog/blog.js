@@ -52,8 +52,13 @@ const Blog = () => {
         modules={[Grid]}
         slidesPerView={'auto'}
         spaceBetween={20}
-        centeredSlides={true}
+        centeredSlides={false}
         breakpoints={{
+          830: {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            centeredSlides: true,
+          },
           1180: {
             slidesPerView: 'auto',
             spaceBetween: 24,
@@ -84,7 +89,7 @@ const Blog = () => {
         ))}
 
       </Swiper>
-      <Link className="blog-holder-button">Другие материалы</Link>
+      <Link to={'/dum'} className="blog-holder-button">Другие материалы</Link>
     </div>
    );
 }

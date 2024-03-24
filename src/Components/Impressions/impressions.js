@@ -52,9 +52,17 @@ const Impressions = () => {
       {sizeChange ? (
         <Swiper className='impressions-swiper'
           slidesPerView={'auto'}
-          loop={true}
+          loop={false}
           spaceBetween={24}
-          centeredSlides={true}
+          centeredSlides={false}
+          breakpoints={{
+            500: {
+              slidesPerView: 'auto',
+              loop: true,
+              spaceBetween: 24,
+              centeredSlides: true
+            }
+          }}
         >
           {impressions.map((photo) => (
           <SwiperSlide className={`impressions-swiper-slide`} key={photo.id} style={{

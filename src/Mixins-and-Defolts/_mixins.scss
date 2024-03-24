@@ -6,13 +6,21 @@ $NunitoSans: "Nunito Sans", sans-serif;
 @mixin GreenButton {
   border-radius: 4px;
   background: rgb(26, 62, 62);
-  padding: 12px 24px 12px 24px;
+  padding: 16px 36px 16px 36px;
   color: rgb(253, 253, 253);
   display: block;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
   font-family: $NunitoSans;
+  transition: 0.5s;
+  &:hover {
+    background-color: rgba(26, 35, 62, 1.00);
+    transform: translateY(-5px);
+  }
+  @media (max-width: 500px) {
+    padding: 12px 24px 12px 24px;
+  }
 }
 
 @mixin WhiteButton {
@@ -25,6 +33,12 @@ $NunitoSans: "Nunito Sans", sans-serif;
   font-weight: 600;
   line-height: 20px;
   font-family: $NunitoSans;
+  transition: 0.5s;
+  &:hover {
+    filter: invert(100%);
+    color: black;
+    transform: translateY(-5px);
+  }
 }
 
 @mixin Container {
@@ -40,6 +54,9 @@ $NunitoSans: "Nunito Sans", sans-serif;
   line-height: 150%;
   letter-spacing: 2%;
   text-align: left;
+  @media (max-width: 780px) {
+    font-size: 28px;
+  }
 }
 
 @mixin Black14T {
@@ -66,6 +83,9 @@ $NunitoSans: "Nunito Sans", sans-serif;
   font-weight: 400;
   line-height: 25px;
   text-align: left;
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 }
 
 @mixin Black24T {
@@ -82,6 +102,9 @@ $NunitoSans: "Nunito Sans", sans-serif;
   font-size: 29px;
   font-weight: 800;
   line-height: 120%;
+  @media (max-width: 500px) {
+    font-size: 24px;
+  }
 }
 
 @mixin White14T{
@@ -143,5 +166,8 @@ $NunitoSans: "Nunito Sans", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 20px;
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 }
 

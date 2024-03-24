@@ -2,17 +2,18 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import logo from '../../../Img/Logo.png'
+import logoSvg from '../../../Img/LogoMini.svg'
 import './navbar.scss'
 
 
 const Navbar = () => {
 
   const menuList = [
-    {id: 1, to: '/guide', titel: 'Про гида'},
-    {id: 2, to: '/', titel: 'Программа тура'},
-    {id: 3, to: '/', titel: 'Стоимость'},
-    {id: 4, to: '/', titel: 'Блог'},
-    {id: 5, to: '/', titel: 'Контакты'}
+    {id: 1, to: '/dum', titel: 'Про гида'},
+    {id: 2, to: '/dum', titel: 'Программа тура'},
+    {id: 3, to: '/dum', titel: 'Стоимость'},
+    {id: 4, to: '/dum', titel: 'Блог'},
+    {id: 5, to: '/dum', titel: 'Контакты'}
   ]
 
   const [resize, setResize] = useState(false);
@@ -33,7 +34,6 @@ const Navbar = () => {
       setActiveMenu(true);
     } else {
       setActiveMenu(false);
-      console.log(event);
     }
   } 
 
@@ -59,7 +59,7 @@ const Navbar = () => {
 
   return ( 
     <div className="navbar-holder">
-      <img src={logo} alt="Logo" />
+      <img src={resize ? logoSvg : logo} alt="Logo" />
       <div className="navbar-and-link">
 
         {resize ?
@@ -98,15 +98,15 @@ const Navbar = () => {
           <>
            <nav className="navigation">
              <ul className="navbar-body">
-               <li><Link to={'/'}>Главная</Link></li>
-               <li><Link to={'/guide'}>Про гида</Link></li>
-               <li><Link>Программа тура</Link></li>
-               <li><Link>Стоимость</Link></li>
-               <li><Link>Блог</Link></li>
-               <li><Link>Контакты</Link></li>
+              <li className="navbar-pc-link"><Link to={'/'}>Главная</Link></li>
+              {menuList.map((menuEl) => (
+                <li key={menuEl.id} className="navbar-pc-link">
+                  <Link to={`${menuEl.to}`}><p>{menuEl.titel}</p></Link>
+                </li>
+              ))}
              </ul>
            </nav>
-           <Link className="navbar-con-button">Консультация</Link>
+           <Link to={'/dum'} className="navbar-con-button">Консультация</Link>
           </>
         )}
 

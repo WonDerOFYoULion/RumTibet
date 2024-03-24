@@ -1,0 +1,21 @@
+@import '../../../Mixins-and-Defolts/mixins';
+
+.dummy-holder {
+  @include Container;
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  .dummy-h1 {
+    @include Black24T;
+    color: rgb(242, 190, 34);
+    font-size: 30px;
+    text-align: center;
+  }
+  .dummy-p {
+    @include White18T;
+    text-align: center;
+  }
+}
+

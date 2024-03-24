@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './Pages/Home/Home';
 import Navbar from './Components/Header/NavBar/navbar'
-import AboutGuide from './Pages/AboutGuide/aboutguide';
+import DummyPage from './Pages/DummyPage/dummyPage';
 
 import 'normalize.css';
 import './App.scss';
@@ -17,7 +17,7 @@ function App() {
         </div>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
-          <Route path='/guide' element={<AboutGuide></AboutGuide>}></Route>
+          <Route path='/dum' element={<DummyPage></DummyPage>}></Route>
         </Routes>
       </div>
     </Router>

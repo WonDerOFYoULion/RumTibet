@@ -84,6 +84,20 @@
   }
 
   .impressions-holder-button {
-    @include GreenButton
+    @include GreenButton;
+  }
+}
+
+@media (max-width: 500px) {
+  .impressions-holder {
+    @include Container;
+    align-items: flex-start;
+    gap: 32px;
+    .impressions-holder-h2 {
+      margin-bottom: -24px;
+    }
+    .impressions-holder-button {
+      align-self: center;
+    }
   }
 }

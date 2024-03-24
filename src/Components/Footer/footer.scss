@@ -39,9 +39,6 @@
   
   .footer-holder-service {
     width: 332px;
-
-
-
     .service-h2 {
       @include White20T;
       margin-bottom: 17px
@@ -58,10 +55,11 @@
           align-items: center;
           gap: 8px;
           transition: 0.3s;
-  
           &:hover {
-            color: rgb(242, 190, 34);
-            text-decoration: underline;
+            .specific-service-p {
+              color: rgb(242, 190, 34);
+              text-decoration: underline;
+            }
             .arrow {
               fill: rgb(242, 190, 34);
             }
@@ -90,7 +88,6 @@
   @media (max-width: 1065px) {
     .footer-holder-service {
       width: 280px;
-
     }
   }
 
@@ -129,6 +126,11 @@
 
     }
   }
+}
+
+*:focus, *:active {
+  outline: none; /* Убираем контур при активации */
+  -webkit-tap-highlight-color: transparent; /* Убираем подсветку при нажатии (для мобильных устройств) */
 }
 
 @media (max-width: 1000px) {

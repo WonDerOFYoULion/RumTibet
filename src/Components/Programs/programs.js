@@ -18,7 +18,7 @@ const Programs = () => {
         </p>
 
         <div className='merit'>
-          <img src={guide} alt="guide" />
+          <img className='merit-img' src={guide} alt="guide" />
           <div>
             <h2>Опытный гид</h2>
             <p>Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.</p>
@@ -26,7 +26,7 @@ const Programs = () => {
         </div>
 
         <div className='merit'>
-          <img src={security} alt="security" />
+          <img className='merit-img' src={security} alt="security" />
           <div>
             <h2>Безопасный поход</h2>
             <p>Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.</p>
@@ -34,14 +34,14 @@ const Programs = () => {
         </div>
 
         <div className='merit'>
-          <img src={price} alt="pride" />
+          <img className='merit-img' src={price} alt="pride" />
           <div>
             <h2>Лояльные цены</h2>
             <p>Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.</p>
           </div>
         </div>
 
-        <Link className='programs-holder-button'>Стоимость программ</Link>
+        <Link to={'/dum'} className='programs-holder-button'>Стоимость программ</Link>
 
       </div>
       <div className='programs-holder-right'>

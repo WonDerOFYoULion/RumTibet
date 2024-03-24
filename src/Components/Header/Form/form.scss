@@ -49,7 +49,7 @@
   }
 }
 
-@media screen and (min-width: 781px) and (max-width: 1150px) {
+@media (min-width: 781px) and (max-width: 1150px) {
   .form-holder {
     display: flex;
     flex-direction: column;
@@ -71,10 +71,6 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    .header-h1 {
-      @include HeaderText;
-      font-size: 28px;
-    }
     .form-link {
       @include WhiteButton;
       align-self: flex-start;

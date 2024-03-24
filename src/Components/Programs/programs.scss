@@ -41,12 +41,39 @@
   }
 }
 
-@media (max-width: 1080px) {
+@media (min-width: 501px) and (max-width: 1080px) {
   .programs-holder {
     justify-content: center;
     .programs-holder-left {
       align-items: center;
       width: 100%;
+    }
+    .programs-holder-right {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .programs-holder {
+    justify-content: center;
+    .programs-holder-left {
+      gap: 32px;
+      align-items: flex-start;
+      width: 100%;
+      .programs-holder-h2 {
+        margin-bottom: -24px;
+      }
+      .merit {
+        display: flex;
+        align-items: flex-start;
+        .merit-img {
+          padding-top: 5px;
+        }
+      }
+      .programs-holder-button {
+        align-self: center;
+      }
     }
     .programs-holder-right {
       display: none;
