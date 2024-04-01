@@ -34,7 +34,8 @@ const Directions = () => {
 
         <SwiperSlide className="swiper-slide lake">
 
-            <div className="name-and-price-holder">
+            <div className="description-holder">
+              
               <div className="name-and-price">
                 <div className="name">
                   <h3 className="name-h3">Озеро возле гор</h3>
@@ -42,6 +43,15 @@ const Directions = () => {
                 </div>
                 <div className="price">480$</div>
               </div>
+
+              <div className="description-content">
+              <p className="description-p">
+                Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"и занялся его поисками в классической латинской литературе.
+              </p>
+
+              <Link to={'/dum'} className="description-button">Программа тура</Link>
+              </div>
+
             </div>
 
             <div className="mark">
@@ -52,7 +62,8 @@ const Directions = () => {
         </SwiperSlide>
         <SwiperSlide className="swiper-slide night">
 
-            <div className="name-and-price-holder">
+            <div className="description-holder">
+
               <div className="name-and-price">
                 <div className="name">
                   <h3 className="name-h3">Ночь в горахр</h3>
@@ -60,6 +71,15 @@ const Directions = () => {
                 </div>
                 <div className="price">500$</div>
               </div>
+
+              <div className="description-content">
+              <p className="description-p">
+                Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"и занялся его поисками в классической латинской литературе.
+              </p>
+
+              <Link to={'/dum'} className="description-button">Программа тура</Link>
+              </div>
+
             </div>
 
             <div className="mark">
@@ -70,7 +90,8 @@ const Directions = () => {
         </SwiperSlide>
         <SwiperSlide className="swiper-slide yoga">
 
-            <div className="name-and-price-holder">
+            <div className="description-holder">
+
               <div className="name-and-price">
                 <div className="name">
                   <h3 className="name-h3">Йога в горах</h3>
@@ -78,6 +99,15 @@ const Directions = () => {
                 </div>
                 <div className="price">230$</div>
               </div>
+
+              <div className="description-content">
+              <p className="description-p">
+                Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"и занялся его поисками в классической латинской литературе.
+              </p>
+
+              <Link to={'/dum'} className="description-button">Программа тура</Link>
+              </div>
+
             </div>
 
             <div className="mark">
@@ -89,7 +119,9 @@ const Directions = () => {
 
       </Swiper>
       <Link to={'/dum'} className="directions-holder-button">Рейтинг направлений</Link>
+
     </div>
+    
    );
 }
  
