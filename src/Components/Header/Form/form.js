@@ -1,6 +1,6 @@
 import './form.scss'
 import arrow from '../../../Img/icons/Arrow-down.png'
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { OverlayScrollbars } from 'overlayscrollbars';
 import 'overlayscrollbars/overlayscrollbars.css'
@@ -52,7 +52,7 @@ const Form = () => {
   let participantRef = useRef(null);
   let participantsListRef = useRef(null);
 
-  const inputClick = (event) => {
+  const inputClick = useCallback((event) => {
 
     if (locationRef.current.contains(event.target)) {
       setInputCityState(!inputCityState);
@@ -64,7 +64,6 @@ const Form = () => {
       setInputCityState(false);
     } 
 
-
     if (dateRef.current.contains(event.target)) {
       setInputDateState(!inputDateState);
     } 
@@ -75,7 +74,6 @@ const Form = () => {
       setInputDateState(false);
     } 
 
-
     if (participantRef.current.contains(event.target)) {
       setInputGroupState(!inputGroupState);
     } 
@@ -85,7 +83,8 @@ const Form = () => {
     if (!participantsListRef.current.contains(event.target) && !participantRef.current.contains(event.target)) {
       setInputGroupState(false);
     } 
-  }
+  }, [inputCityState, inputGroupState, inputDateState])
+  
 
   const pickUpCity = (city) => {
     setChosenSity(city);
@@ -96,16 +95,6 @@ const Form = () => {
   }
 
   useEffect(() => {
-
-    const handelResize = () => {
-      if (window.innerWidth <= 1150 ) {
-        setResize(true);
-      } else {
-        setResize(false)
-      }
-    }
-
-    handelResize();
 
     const cityScrollBar = OverlayScrollbars(locationListRef.current, {
       overflow: {
@@ -121,15 +110,29 @@ const Form = () => {
       }
     });
 
+    const handelResize = () => {
+      if (window.innerWidth <= 1150 ) {
+        setResize(true);
+        document.removeEventListener('click', inputClick);
+        cityScrollBar.destroy();
+        groupsScrollBar.destroy();
+      } else {
+        setResize(false)
+      }
+    }
+
     window.addEventListener('resize', handelResize);
     document.addEventListener('click', inputClick)
+
+    handelResize();
+
     return () => {
       window.removeEventListener('resize', handelResize);
       document.removeEventListener('click', inputClick);
       cityScrollBar.destroy();
       groupsScrollBar.destroy();
     }
-  },[inputCityState, inputGroupState, inputDateState]);
+  },[inputCityState, inputGroupState, inputDateState, inputClick]);
 
   return ( 
     <div className='form-holder'>

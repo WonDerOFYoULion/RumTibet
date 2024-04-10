@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 
   .navbar-and-link {
     display: flex;
@@ -34,86 +35,73 @@
   }
 
   .navigation-for-phones {
-    position: relative;
     cursor: pointer;
     .menu-svg-holder {
       .menu-svg {
         transition: 0.5s;
         &:hover {
-          fill: blueviolet;
+          fill: rgb(242, 190, 34);
         }
       }
     }
-    .drop-down-menu {
-      position: absolute;
-      z-index: 200;
-      width: 290px;
-      height: 535px;
-      background: rgb(26, 62, 62);
+  }
 
-      top: -12px;
-      left: -252px;
-      padding: 16px 16px 0px 16px;
+  .drop-down-menu {
+    position: absolute;
+    z-index: 200;
+    width: 290px;
+    height: 535px;
+    background: rgb(26, 62, 62);
+    top: 0px;
+    left: -16px;
+    padding: 16px 16px 0px 16px;
+    display: flex;
+    flex-direction: column;
+    transition: 2s;
+    cursor: default;
 
+    .exit-menu {
+      align-self: flex-end;
+      transition: 0.2s;
+      cursor: pointer;
+      &:hover {
+        transform: rotateZ(90deg)
+      }
+    }
+    .menu-list {
+      @include White14T;
       display: flex;
       flex-direction: column;
-
-      transition: 2s;
-
-
-      cursor: default;
-
-      .exit-menu {
-        align-self: flex-end;
-        transition: 0.2s;
-        cursor: pointer;
-        &:hover {
-          transform: rotateZ(90deg)
-        }
-      }
-
-      .menu-list {
-        @include White14T;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        .specific-menu-elemnt-holder {
-          .specific-menu-elemnt {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-    
-            &:hover {
-              color: rgb(242, 190, 34);
-              text-decoration: underline;
-              .arrow {
-                fill: rgb(242, 190, 34);
-              }
+      align-items: flex-start;
+      gap: 16px;
+      .specific-menu-elemnt-holder {
+        .specific-menu-elemnt {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          transition: 0.3s;
+  
+          &:hover {
+            color: rgb(242, 190, 34);
+            text-decoration: underline;
+            .arrow {
+              fill: rgb(242, 190, 34);
             }
           }
         }
       }
+    }
 
-    }
-    .visible {
-      // display: flex;
-      transition: 0.3s;
-      opacity: 1;
-      visibility: visible;
-      height: 535px;
-      // transform: translateX(0px);
-    }
-    .hidden {
-      // display: none;
-      transition: 0.3s;
-      opacity: 0;
-      visibility: hidden;
-      height: 0px;
-      // transform: translateX(310px);
-    }
   }
+  .visible {
+    transition: 0.3s;
+    transform: translateX(0px);
+  }
+  .hidden {
+    transition: 0.3s;
+    transform: translateX(-290px);
+  }
+
 }
 
 *:focus, *:active {

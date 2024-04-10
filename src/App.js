@@ -4,6 +4,7 @@ import Home from './Pages/Home/Home';
 import Navbar from './Components/Header/NavBar/navbar'
 import DummyPage from './Pages/DummyPage/dummyPage';
 import FindProgram from './Pages/FIndProgram/findProgram';
+import ImpressionsImgPage from './Pages/ImpressionsImgPage/ImpressionsImgPage';
 
 import 'normalize.css';
 import './App.scss';
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/dum' element={<DummyPage></DummyPage>}></Route>
           <Route path='/findprogram' element={<FindProgram></FindProgram>}></Route>
+          <Route path='/impressions/:photoId' element={<ImpressionsImgPage></ImpressionsImgPage>}></Route>
         </Routes>
       </div>
     </Router>

@@ -82,7 +82,7 @@ const Blog = () => {
               </div>
               <div className="date-and-link">
                 <p className="date">{blog.date}</p>
-                <Link className="blog-link">Читать статью</Link>
+                <Link to={'/dum'} className="blog-link">Читать статью</Link>
               </div>
             </div>
           </SwiperSlide>

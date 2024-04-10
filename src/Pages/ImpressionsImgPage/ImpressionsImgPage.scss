@@ -1,0 +1,24 @@
+@import '../../Mixins-and-Defolts/mixins';
+
+.img-and-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #799397;
+  @include White18T;
+  height: 1080px;
+  padding: 100px 10px 0px;
+  .img {
+    max-width: 1180px;
+    max-height: 720px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 8px;
+    img {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  }
+}

@@ -64,10 +64,13 @@
           .blog-link {
             @include Black14T;
             color: rgb(26, 62, 62);
+            &:hover {
+              text-decoration: underline;
+            
+            }
           }
         }
       }
-
 
     }
 
