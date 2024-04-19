@@ -1,44 +1,27 @@
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
 import './researches.scss'
 import play from '../../Img/icons/Play.svg'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css'
-import { EffectCreative, FreeMode, Autoplay } from 'swiper/modules';
-import { useEffect, useState } from 'react';
+import { EffectCreative, Autoplay } from 'swiper/modules';
+
 
 const Researches = () => {
 
-  const [screeReduced, setScreenReduced] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 800) {
-        setScreenReduced(true);
-      } else {
-        setScreenReduced(false);
-      }
-    };
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  },[]);  
+  const isMobile = useMediaQuery({ maxWidth: 800 });
 
   return ( 
     <div className="research-holder">
 
       <div className='research-holder-left'>
 
-        {screeReduced ? (
+        {isMobile ? (
           <div className='swiper'> 
             <div className='research-holder-slide2 slide-hover'>
-              <Link>
+              <Link target='_blank' to={'https://youtu.be/FiU29CHsQpo?si=kH7wbZfmjmzQH_nj'}>
                 <img className='play-icon' src={play} alt="play" />
               </Link>
             </div>
@@ -48,7 +31,7 @@ const Researches = () => {
           <Swiper className='swiper'
           grabCursor={true}
           loop={true}
-          modules={[FreeMode, EffectCreative, Autoplay]}
+          modules={[EffectCreative, Autoplay]}
           autoplay={{
             delay: 5000,
             pauseOnMouseEnter: true
@@ -74,7 +57,7 @@ const Researches = () => {
                 <img className='play-icon' src={play} alt="play" />
               </Link>
             </SwiperSlide>
-          
+
           </Swiper>
         )}
       </div>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useMediaQuery} from 'react-responsive'
 
 import logo from '../../../Img/Logo.png'
 import logoSvg from '../../../Img/LogoMini.svg'
@@ -17,20 +18,17 @@ const Navbar = () => {
     {id: 6, to: '/dum', titel: 'Контакты'}
   ]
 
-  const [resize, setResize] = useState(false);
+  const isMobile = useMediaQuery({maxWidth: 1037});
   const [activeMenu, setActiveMenu] = useState(false);
 
   const openMenu = (event) => {
     event.stopPropagation();
     setActiveMenu(true);
   }
-
   const closeMenu = () => {
     setActiveMenu(false);
   }
-
   const closeMenuWin = (event) => {
-
     if (event.target.classList.contains('menu-svg-holder') || event.target.classList.contains('drop-down-menu')) {
       setActiveMenu(true);
     } else {
@@ -39,31 +37,18 @@ const Navbar = () => {
   } 
 
   useEffect(() => {
-
-    const handleResize = () => {
-      if (window.innerWidth <= 1037) {
-        setResize(true);
-      } else {
-        setResize(false);
-      }
-    }
-
-    handleResize();
-    
-    window.addEventListener('resize', handleResize);
     window.addEventListener('click', closeMenuWin);
     return () => {
-      window.removeEventListener('resize', handleResize);
       window.removeEventListener('click', closeMenuWin);
     }
   },[activeMenu]);
 
   return ( 
     <div className="navbar-holder">
-      <img src={resize ? logoSvg : logo} alt="Logo" />
+      <img src={isMobile ? logoSvg : logo} alt="Logo" />
       <div className="navbar-and-link">
 
-        {resize ?
+        {isMobile ?
         (
           <div className="navigation-for-phones">
             <div onClick={openMenu} className="menu-svg-holder" >

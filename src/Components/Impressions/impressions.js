@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import 'swiper/swiper-bundle.css'
 
@@ -16,7 +16,7 @@ import pic6 from '../../Img/Impressions6.png'
 
 const Impressions = () => {
 
-  const [sizeChange, setSizeChange] = useState(false);
+  const isMobile = useMediaQuery({maxWidth: 910});
 
   const impressions = [
     {id: 1, img: pic1, gridType: 'grid-type-one'},
@@ -27,29 +27,12 @@ const Impressions = () => {
     {id: 6, img: pic6, gridType: 'grid-type-two'},
   ]
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 910) {
-        setSizeChange(true);
-      } else {
-        setSizeChange(false);
-      }
-    }
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    }
-  },[]);
-
   return ( 
     <div className='impressions-holder'>
       <h2 className='impressions-holder-h2'>фото-отчет</h2>
       <h1 className='impressions-holder-h1'>Делимся впечатлениями</h1>
 
-      {sizeChange ? (
+      {isMobile ? (
         <Swiper className='impressions-swiper'
           slidesPerView={'auto'}
           loop={false}
@@ -90,7 +73,6 @@ const Impressions = () => {
             </svg>
           </Link>
         ))}
-
         </div>
       )}
 
