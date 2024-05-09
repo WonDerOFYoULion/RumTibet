@@ -139,7 +139,7 @@ const Form = () => {
       <h1 className="header-h1">Насладись прогулкой в горах с командой единомышленников</h1>
       {resize ? 
       (
-        <Link to={'/findprogram'} className='form-link'>Найти программу</Link>
+        <Link to={'/dum'} className='form-link'>Найти программу</Link>
       ):(
         <form onSubmit={(event) => event.preventDefault()} className="form">
 
